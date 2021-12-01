@@ -18,29 +18,27 @@ public class App {
     }
 
     public Integer getSolutionPart1() {
-        int result = 0;
-        for (int i=0; i<input.size();i++) {
-            int row = input.get(i);
-            if (BigInteger.valueOf(row).isProbablePrime(10)) {
-                result += i*row;
-            }
+        int increases = -1;
+        int previousDepth = 0;
+        for (int depth : input) {
+            if (depth > previousDepth) increases++;
+            previousDepth = depth;
         }
-        return result;
+        return increases;
     }
 
     public Integer getSolutionPart2() {
-        int result = 0;
-        for (int i=0; i<input.size();i++) {
-            int row = input.get(i);
-            if (!BigInteger.valueOf(row).isProbablePrime(10)) {
-                if (i%2==0) {
-                    result += row;
-                } else {
-                    result -= row;
-                }
+        int increases = -1;
+        int previousDepth = 0;
+        for (int i = 2; i < input.size(); i++) {
+            int depth = 0;
+            for (int j = 0; j < 3; j++) {
+                depth += input.get(i - j);
             }
+            if (depth > previousDepth) increases++;
+            previousDepth = depth;
         }
-        return result;
+        return increases;
     }
 
     public static void main(String[] args) throws IOException {

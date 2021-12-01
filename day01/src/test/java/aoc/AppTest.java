@@ -3,22 +3,24 @@
  */
 package aoc;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class AppTest {
-    private static final List<Integer> INPUT = List.of(0,
-            3,
-            4,
-            42,
-            106,
-            107,
-            267,
-            269);
+    private static final List<Integer> INPUT = List.of(199,
+            200,
+            208,
+            210,
+            200,
+            207,
+            240,
+            269,
+            260,
+            263);
     App classUnderTest;
 
     @BeforeEach
@@ -26,11 +28,13 @@ public class AppTest {
         classUnderTest = new App(INPUT);
     }
 
-    @Test void part1SumsInput() {
-        assertEquals(2421, classUnderTest.getSolutionPart1());
+    @Test
+    void part1Input() {
+        assertEquals(7, classUnderTest.getSolutionPart1());
     }
 
-    @Test void part2MultipliesInput() {
-        assertEquals(335, classUnderTest.getSolutionPart2());
+    @Test
+    void part2Input() {
+        assertEquals(5, classUnderTest.getSolutionPart2());
     }
 }
