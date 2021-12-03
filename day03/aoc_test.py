@@ -22,7 +22,7 @@ class TestAoc(unittest.TestCase):
         self.assertEqual(aoc.getSolutionPart1(self.test_input), 198)
 
     def test_get_solution_2_should_return_product_of_input_entries(self):
-        self.assertEqual(aoc.getSolutionPart2(self.test_input), 900)
+        self.assertEqual(aoc.getSolutionPart2(self.test_input), 230)
 
 
 if __name__ == "__main__":
