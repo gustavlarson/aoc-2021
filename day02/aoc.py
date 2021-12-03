@@ -32,14 +32,13 @@ def getSolutionPart2(input_list):
             depth += aim * value
     return depth * position
 
+if __name__ == "__main__":
+    with open("input.txt") as f:
+        file_input = [x for x in f.readlines()]
 
-with open("input.txt") as f:
-    file_input = [x for x in f.readlines()]
+    part = environ.get("part")
 
-print("Python")
-part = environ.get("part")
-
-if part == "part2":
-    print(getSolutionPart2(file_input))
-else:
-    print(getSolutionPart1(file_input))
+    if part == "part2":
+        print(getSolutionPart2(file_input))
+    else:
+        print(getSolutionPart1(file_input))
