@@ -8,11 +8,11 @@ internal class AocTemplateTest {
 
     @Test
     internal fun `solutionPart1 should return sum of input`() {
-        assertEquals(solutionPart1(input), 5)
+        assertEquals(5, solutionPart1(input))
     }
 
     @Test
     internal fun `solutionPart2 should return product of input`() {
-        assertEquals(solutionPart2(input), 0)
+        assertEquals(12, solutionPart2(input))
     }
 }
