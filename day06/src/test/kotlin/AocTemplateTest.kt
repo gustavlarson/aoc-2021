@@ -4,12 +4,12 @@ import kotlin.test.assertEquals
 internal class AocTemplateTest {
 
     @Test
-    internal fun `solutionPart1 should return sum of input`() {
+    internal fun `solutionPart1`() {
         assertEquals(5934, solutionPart1("3,4,3,1,2".split(",").map { it.toInt() }))
     }
 
     @Test
-    internal fun `solutionPart2 should return product of input`() {
-        assertEquals(56154, solutionPart2( "".split(",").map { it.toInt() }))
+    internal fun `solutionPart2`() {
+        assertEquals(26984457539, solutionPart2("3,4,3,1,2".split(",").map { it.toInt() }))
     }
 }

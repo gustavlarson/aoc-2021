@@ -9,7 +9,7 @@ fun main() {
     println(answer)
 }
 
-fun solutionPart1(fishes: List<Int>): Int {
+fun solutionPart1(fishes: List<Int>): Long {
     var state = fishes
     var nextState: MutableList<Int> = mutableListOf()
     for (day in 1..80) {
@@ -23,9 +23,25 @@ fun solutionPart1(fishes: List<Int>): Int {
             }
         }
         state = nextState
-        println("After day ${day}: ${state.joinToString()}")
+        println("After day ${day}:") // ${state.joinToString()}")
     }
-    return state.size
+    return state.size.toLong()
 }
 
-fun solutionPart2(input: List<Int>) = input.reduce(Int::times)
+fun solutionPart2(fishes: List<Int>) : Long {
+    var state = MutableList(9) { 0L }
+    for (age in fishes) {
+        state[age]++
+    }
+
+    for (day in 1..256) {
+        val nextState = MutableList(9) { 0L }
+        nextState[6] = state[0]
+        nextState[8] = state[0]
+        for (i in 0..7) {
+            nextState[i] += state[i+1]
+        }
+        state = nextState
+    }
+    return state.sum()
+}
