@@ -75,9 +75,7 @@ if __name__ == "__main__":
     with open("input.txt") as f:
         file_input = [x.strip() for x in f.readlines()]
 
-    part = environ.get("part")
-
-    if part == "part2":
+    if environ.get("part") == "part2":
         print(getSolutionPart2(file_input))
     else:
         print(getSolutionPart1(file_input))
